@@ -27,8 +27,8 @@ dispute_songs_at = 'all_Dispute_Songs'
 num_of_disputes = 8
 dispute_heatmaps = False
 
-validate = False
-validate_songs_at = 'all_Validate_Songs'
+validate = True
+validate_songs_at = 'Example'
 num_of_validations = 2
 validate_heatmaps = False
 

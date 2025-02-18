@@ -4,7 +4,8 @@ from Song_Class import Song
 
 from Global import beats, num_of_frames
 
-import librosa.feature
+#import librosa.feature
+import librosa
 
 import numpy
 
