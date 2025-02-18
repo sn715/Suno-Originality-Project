@@ -16,11 +16,11 @@ import seaborn as sns
 
 from Global import (beats, map_date, correlation_min, to_load_pickle_date)
 
-from Common_Functions import common_get_prompt_list, common_suno_diagonal_heatmap
+#from Common_Functions import common_get_prompt_list, common_suno_diagonal_heatmap
 
 from Diagonal_Corr_and_Heatmaps import find_diagonal_corr
 
-from Straight_Corr_and_Heatmaps import find_straight_corr
+#from Straight_Corr_and_Heatmaps import find_straight_corr
 
 
 class Comparison:

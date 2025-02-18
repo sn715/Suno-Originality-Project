@@ -15,9 +15,10 @@ chroma_analysis = False
 
 suno = False
 suno_prompts, suno_students = 8, 11
-suno_songs_at = 'all_Transposed_Suno'
-suno_heatmaps_1 = False
-suno_heatmaps_2 = True
+#suno_songs_at = 'all_Transposed_Suno'
+suno_songs_at = 'Example'
+suno_heatmaps_1 = True #compare within prompt
+suno_heatmaps_2 = False
 diag_comparison_list = []
 straight_comparison_list = []
 

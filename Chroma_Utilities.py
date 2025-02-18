@@ -1,6 +1,6 @@
 from Song_Class import Song
 
-from Dispute_Song_Class import Dispute_Song
+#from Dispute_Song_Class import Dispute_Song
 
 from Global import beats, num_of_frames
 
@@ -124,7 +124,7 @@ def mean_beat_chroma(rolling_beats_song):
             # add mean chromagram value of the extracted 8-beat group to mean_chroma list property
     return
 
-
+"""
 def beat_group_corr(this_compare_song, this_other_song, length):
     # the 2 songs that are being compared are passed in parameters
     # length var parameter represents the num of 8-beat groups
@@ -172,3 +172,42 @@ def beat_group_corr(this_compare_song, this_other_song, length):
             beat_group_avg_corr_matrix[y][x] = beat_group_avg_corr
             # store avg correlation value in matrix
     return beat_group_avg_corr_matrix
+"""
+
+
+def beat_group_corr(this_compare_song, this_other_song, length):
+    # Initialize a 2-dimensional NumPy array filled with zeros
+    beat_group_avg_corr_matrix = numpy.zeros((length, length))
+
+    for y in range(length):
+        # Get the current 8-beat group from the first song
+        current_chroma_group = this_compare_song.eight_beat_groups[y]
+        
+        for x in range(length):
+            # Get the corresponding 8-beat group from the second song
+            other_chroma_group = this_other_song.eight_beat_groups[x]
+            
+            # List to store correlations for each corresponding beat pair
+            chroma_group_corr = []
+            
+            for z in range(beats):
+                # Get the chromagram for the current beat in both groups
+                current_chroma = current_chroma_group[z]
+                other_chroma = other_chroma_group[z]
+                
+                # Compute the correlation between the two chromagrams
+                chroma_corr_matrix = numpy.corrcoef(current_chroma, other_chroma)
+                current_chroma_corr = chroma_corr_matrix[0, 1]
+                
+                # Store the correlation for this corresponding beat pair
+                chroma_group_corr.append(current_chroma_corr)
+            
+            # Average the correlations for the 8 corresponding beat pairs
+            beat_group_avg_corr = numpy.mean(chroma_group_corr)
+            
+            # Store the average correlation in the matrix
+            beat_group_avg_corr_matrix[y][x] = beat_group_avg_corr
+    
+    return beat_group_avg_corr_matrix
+
+
