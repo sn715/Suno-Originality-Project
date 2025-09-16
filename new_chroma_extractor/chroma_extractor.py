@@ -1,4 +1,13 @@
-# python chroma_extractor.py ./input_audio ./output_audio ./output_chroma --n_frames 4 --sr 44100
+# To set up a conda environment (only needs doing once):
+# conda create --name suno-orig python=3.10
+# conda activate suno-orig
+# Change directory to the new_chroma_extractor folder, then run:
+# (suno-orig) >> pip install -r requirements.txt
+
+# Needs doing each time:
+# conda activate suno-orig
+# Change directory to the new_chroma_extractor folder, then run:
+# python chroma_extractor.py ./input_audio ./output_audio ./output_chroma --n_frames 10 --sr 44100
 
 import os
 import argparse
